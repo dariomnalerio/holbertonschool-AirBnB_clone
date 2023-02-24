@@ -9,13 +9,23 @@ class BaseModel:
     Base class for all other classes
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         Initialize instance variables
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if len(kwargs) > 0:
+            format = "%Y-%m-%dT%H:%M:%S.%f"
+            for key, item in kwargs.items():
+                if key == 'id':
+                    self.id = str(item)
+                if key == 'created_at':
+                    self.created_at = datetime.strptime(item, format)
+                if key == 'updated_at':
+                    self.updated_at = datetime.strptime(item, format)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """
