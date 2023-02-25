@@ -43,8 +43,8 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             print("** class name missing **")
             return
-        arguments = arg.split()
-        if not arguments[0] in self.classes.keys():
+        argument = arg.split()
+        if not argument[0] in self.classes.keys():
             print("** class doesn't exist **")
             return
         if len(arg.split()) > 1:
@@ -58,17 +58,17 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
 
     def do_destroy(self, arg):
-        "Delete a instance of the class BaseMode"
+        "Deletes an instance based on the class name and id."
         if len(arg) == 0:
             print("** class name missing **")
             return
         
-        arguments = arg.split()
-        if not arguments[0] in self.classes.keys():
+        argument = arg.split()
+        if not argument[0] in self.classes.keys():
             print("** class doesn't exist **")
             return
-        if len(arguments) > 1:
-            key = arguments[0] + '.' + arguments[1]
+        if len(argument) > 1:
+            key = argument[0] + '.' + argument[1]
             if key in storage.all():
                 storage.all().pop(key)
                 storage.save()
@@ -78,6 +78,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
 
     def do_all(self, arg):
+        """Prints all string representation of all instances based or not on the class name."""
         if len(arg) == 0:
             print([str(a) for a in storage.all().values()])
             return
@@ -87,6 +88,34 @@ class HBNBCommand(cmd.Cmd):
         if arg in self.classes.keys():
             for a in storage.all():
                 print(str(a))
+
+    def do_uptade(self,arg):
+        """Updates an instance based on the class name and id by adding or updating attribute."""
+        if len(arg) == 0:
+            print("** class name missing **")
+            return
+        argument = arg.split()
+        if not argument[0] in self.classes.keys():
+            print("** class doesn't exist **")
+            return
+        key = argument[0] + '.' + argument[1]
+        if len(argument) == 1:
+            print("** instance id missing **")
+            return
+        
+        if len(argument > 2):
+            if len(argument) == 3:
+                print("** value missing **")   
+            else:
+                if key in storage.all():
+                    setattr(storage.all()[key], argument[3], argument[4][1:-1])
+                    storage.all()[key].save()
+                else:
+                    print('** no instance found **')
+        else:
+            print("** attribute name missing **")
+
+        
 
         
 
