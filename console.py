@@ -74,8 +74,8 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
 
     def do_all(self, arg):
-        if len(arg) == 0:
-            print("** class name missing **")
+        if not arg.split()[0] in self.classes.keys():
+            print("** class doesn't exist **")
             return
         if arg in self.classes.keys():
             for a in storage.all():
