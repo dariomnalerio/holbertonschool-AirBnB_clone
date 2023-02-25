@@ -1,4 +1,4 @@
-#!/usr/bin/python3ls
+#!/usr/bin/python3
 """ AirBnb Console """
 import cmd
 
