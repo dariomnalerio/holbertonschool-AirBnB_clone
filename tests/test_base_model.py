@@ -21,3 +21,5 @@ class Test_BaseModel(unittest.TestCase):
         self.assertEqual(dict['updated_at'], diccionary.updated_at.isoformat())
         self.assertEqual(dict['__class__'], 'BaseModel')
 
+    
+
