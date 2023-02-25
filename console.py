@@ -43,6 +43,10 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             print("** class name missing **")
             return
+        arguments = arg.split()
+        if not arguments[0] in self.classes.keys():
+            print("** class doesn't exist **")
+            return
         if len(arg.split()) > 1:
             key = arg.split()[0] + '.' + arg.split()[1]
             if key in storage.all():
@@ -75,6 +79,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         if len(arg) == 0:
+            print([str(a) for a in storage.all().values()])
             return
         if not arg.split()[0] in self.classes.keys():
             print("** class doesn't exist **")
