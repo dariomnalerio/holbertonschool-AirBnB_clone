@@ -58,8 +58,9 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             print("** class name missing **")
             return
-        if len(arg.split()) > 1:
-            key = arg.split()[0] + arg.split()[1]
+        arguments = arg.split()
+        if len(arguments) > 1:
+            key = arguments[0] + '.' + arguments[1]
             if key in storage.all():
                 storage.all().pop(key)
                 storage.save()
