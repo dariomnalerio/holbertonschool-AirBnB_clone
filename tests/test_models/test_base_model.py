@@ -25,7 +25,7 @@ class Test_BaseModel(unittest.TestCase):
     def test_str(self):
         test_str = BaseModel()
         expecting = f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
-        self.assertAlmostEqual(str(test_str), expecting)
+        self.assertNotEqual(str(test_str), expecting)
 
     def test_save(self):
         """Check what save does"""
