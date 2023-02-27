@@ -22,24 +22,10 @@ class Test_BaseModel(unittest.TestCase):
         self.assertEqual(dict['updated_at'], diccionary.updated_at.isoformat())
         self.assertEqual(dict['__class__'], 'BaseModel')
     
-    """def test_str(self):
-        test_str = BaseModel()
-        test_str.id = 100
-        test_str.created_at = datetime.now()
-        test_str.updated_at = test_str.save()
-        expecting = f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
-        self.assertEqual(str(test_str), expecting)
-"""
     def test_str(self):
-        """ Test string """
-        dictonary = {'id': 'cc9909cf-a909-9b90-9999-999fd99ca9a9',
-                     'created_at': '2025-06-28T14:00:00.000001',
-                     '__class__': 'BaseModel',
-                     'updated_at': '2030-06-28T14:00:00.000001',
-                     }
-
-        object_test = BaseModel(**dictonary)
-        out = "[{}] ({}) {}\n".format(type(object_test).__name__, object_test.id, object_test.__dict__)
+        test_str = BaseModel()
+        expecting = f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        self.assertAlmostEqual(str(test_str), expecting)
 
     def test_save(self):
         """Check what save does"""
