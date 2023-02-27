@@ -31,3 +31,4 @@ class Test_BaseModel(unittest.TestCase):
         """Check what save does"""
         with self.assertRaises(AttributeError):
             BaseModel.save(["Hello, World"])
+            BaseModel.save([111, 111, 111, 111])
