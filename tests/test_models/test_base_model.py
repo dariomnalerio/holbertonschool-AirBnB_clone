@@ -8,6 +8,8 @@ from datetime import datetime
 
 
 class Test_BaseModel(unittest.TestCase):
+    
+    
     def test_actual_time(self):
         my_model = BaseModel()
         my_model.save()
@@ -32,3 +34,12 @@ class Test_BaseModel(unittest.TestCase):
         with self.assertRaises(AttributeError):
             BaseModel.save(["Hello, World"])
             BaseModel.save([111, 111, 111, 111])
+    
+    def test_thetime(self):
+        """ test the actual datetime """
+        test = BaseModel()
+        test.save()
+        time = datetime.now()
+        self.assertFalse(test == time)
+
+    
