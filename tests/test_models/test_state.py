@@ -8,3 +8,8 @@ class Test_state(unittest.TestCase):
         new_class = State()
         self.assertTrue(isinstance(new_class, State))
         self.assertIsInstance(new_class, State)
+        self.assertTrue(hasattr(new_class, "name"))
+        self.assertEqual(new_class.name, "")
+
+if __name__ == '__main__':
+    unittest.main()

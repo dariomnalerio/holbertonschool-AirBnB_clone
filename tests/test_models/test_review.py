@@ -8,3 +8,15 @@ class Test_review(unittest.TestCase):
         new_class = Review()
         self.assertTrue(isinstance(new_class, Review))
         self.assertIsInstance(new_class, Review)
+        self.assertTrue(hasattr(new_class, "place_id"))
+        self.assertTrue(hasattr(new_class, "user_id"))
+        self.assertTrue(hasattr(new_class, "text"))
+        self.assertEqual(new_class.place_id, "")
+        self.assertEqual(new_class.user_id, "")
+        self.assertEqual(new_class.text, "")
+
+if __name__ == '__main__':
+    unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()
