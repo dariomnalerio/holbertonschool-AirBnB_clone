@@ -43,9 +43,8 @@ class Test_BaseModel(unittest.TestCase):
     
     def test_str(self):
         """ Test of BaseModel __str__ method"""
-        self.assertEqual(Test_BaseModel.base.__str__(),
-                         f'[{Test_BaseModel.base.__class__.__name__}] '
-                         f'({Test_BaseModel.base.id}) {Test_BaseModel.base.__dict__}')
+        self.assertEqual(Test_BaseModel.base.__str__(), f'[{Test_BaseModel.base.__class__.__name__}] ({Test_BaseModel.base.id}) {Test_BaseModel.base.__dict__}')
+    
     def test_save(self):
         """Check what save does"""
         with self.assertRaises(AttributeError):
