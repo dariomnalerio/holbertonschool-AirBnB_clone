@@ -1,13 +1,31 @@
 #usr/bin/python3
 """ unittest for Class BaseModel """
 import unittest
-import inspect
-from models.base_model import BaseModel
+import io
 from datetime import datetime
+from unittest.mock import patch
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+from contextlib import redirect_stdout
+import os
 
 
 class Test_BaseModel(unittest.TestCase):
     
+    base = BaseModel()
+
+    def setUp(self):
+        """ Test file saving"""
+        with open("file.json", "w") as f:
+            FileStorage.__file_path = 'file.json'
+            FileStorage.__objects = {}
+
+    def tearDown(self):
+        """ Destroys created file"""
+        try:
+            os.remove(FileStorage.__file_path)
+        except FileNotFoundError:
+            pass
     
     def test_actual_time(self):
         my_model = BaseModel()
@@ -23,16 +41,11 @@ class Test_BaseModel(unittest.TestCase):
         self.assertEqual(dict['updated_at'], diccionary.updated_at.isoformat())
         self.assertEqual(dict['__class__'], 'BaseModel')
     
-    def test__str__(self):
-        tested_string = BaseModel()
-        str = tested_string.__str__()
-        self.assertEqual(str.__str__(), tested_string.__str__())
-    
-    def test_the_str(self):
-        test_str = BaseModel()
-        expecting = f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
-        self.assertNotEqual(str(test_str), expecting)
-
+    def test_str(self):
+        """ Test of BaseModel __str__ method"""
+        self.assertEqual(Test_BaseModel.base.__str__(),
+                         f'[{Test_BaseModel.base.__class__.__name__}] '
+                         f'({Test_BaseModel.base.id}) {Test_BaseModel.base.__dict__}')
     def test_save(self):
         """Check what save does"""
         with self.assertRaises(AttributeError):
