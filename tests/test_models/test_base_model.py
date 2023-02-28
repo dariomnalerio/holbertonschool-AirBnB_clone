@@ -40,7 +40,7 @@ class Test_BaseModel(unittest.TestCase):
         time = datetime.now()
         self.assertFalse(my_model.updated_at == time)
 
-    def test_save2(self):
+    def test_save(self):
         self.base = BaseModel()
         old_updated_at = self.base.updated_at
         self.base.save()
@@ -65,7 +65,7 @@ class Test_BaseModel(unittest.TestCase):
         """ Test of BaseModel __str__ method"""
         self.assertEqual(Test_BaseModel.base.__str__(), f'[{Test_BaseModel.base.__class__.__name__}] ({Test_BaseModel.base.id}) {Test_BaseModel.base.__dict__}')
     
-    def test_save(self):
+    def test_save2(self):
         """Check what save does"""
         with self.assertRaises(AttributeError):
             BaseModel.save(["Hello, World"])
