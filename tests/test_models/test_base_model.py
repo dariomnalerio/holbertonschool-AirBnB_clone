@@ -27,11 +27,23 @@ class Test_BaseModel(unittest.TestCase):
         except FileNotFoundError:
             pass
     
+    def test_inst(self):
+        """check class """
+        ml = BaseModel()
+        self.assertTrue(ml, BaseModel)
+    
     def test_actual_time(self):
         my_model = BaseModel()
         my_model.save()
         time = datetime.now()
         self.assertFalse(my_model.updated_at == time)
+
+    def test_attr_none(self):
+        """None attribute."""
+        test = BaseModel(None)
+        self.assertTrue(hasattr(test, "id"))
+        self.assertTrue(hasattr(test, "created_at"))
+        self.assertTrue(hasattr(test, "updated_at"))
 
     def test_to_dict(self):
         diccionary = BaseModel()

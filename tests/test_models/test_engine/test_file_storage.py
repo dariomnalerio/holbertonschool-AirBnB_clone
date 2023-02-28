@@ -43,6 +43,14 @@ class Test_File_Storage(unittest.TestCase):
         self.assertEqual(type(obj), dict)
         self.assertIs(obj, storage._FileStorage__objects)
     
+    def test_all(self):
+        """ check  all function """
+        storage = FileStorage()
+        test = storage.all()
+        self.assertIsNotNone(test)
+        self.assertEqual(type(test), dict)
+        self.assertIs(test, storage._FileStorage__objects)
+    
     def test_save_function(self):
         """ Save  """
         test = BaseModel()

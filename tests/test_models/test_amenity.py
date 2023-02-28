@@ -8,3 +8,4 @@ class Test_amenity(unittest.TestCase):
     def test_class(self):
         new_class = Amenity()
         self.assertTrue(isinstance(new_class, Amenity))
+        self.assertIsInstance(new_class, Amenity)

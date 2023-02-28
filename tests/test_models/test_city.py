@@ -7,3 +7,4 @@ class Test_city(unittest.TestCase):
     def test_class(self):
         new_class = City()
         self.assertTrue(isinstance(new_class, City))
+        self.assertIsInstance(new_class, City)

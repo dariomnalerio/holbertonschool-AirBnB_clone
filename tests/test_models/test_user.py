@@ -7,3 +7,4 @@ class Test_user(unittest.TestCase):
     def test_class(self):
         new_class = User()
         self.assertTrue(isinstance(new_class, User))
+        self.assertIsInstance(new_class, User)
