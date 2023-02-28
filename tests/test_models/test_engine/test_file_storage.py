@@ -16,12 +16,24 @@ from models.review import Review
 class Test_File_Storage(unittest.TestCase):
     """ Doc """    
     
+    def setUp(self):
+        """ check empty """
+        try:
+            remove('storage.json')
+        except Exception:
+            pass
+        FileStorage._FileStorage__objects = {}
+
+    def tearDown(self):
+        """ check remove class """
+        try:
+            remove('storage.json')
+        except Exception:
+            pass
+    
     def empty_class(self):
         """ empty """
     
-    def test_empty(self):
-        """ test empty class  """
-        self.assertNotEqual(storage.all(), {})
     
     def test_functios(self):
         """ check  all function """
@@ -89,3 +101,37 @@ class Test_File_Storage(unittest.TestCase):
         self.assertEqual(test5.id, storage.all()[key_5].id)
         self.assertTrue(key_6 in storage.all().keys())
         self.assertEqual(test6.id, storage.all()[key_6].id)
+
+    def test_new_classes(self):
+        """ check  new method is valid """
+        obj = BaseModel(id='123')
+        obj_key = 'BaseModel' + '.' + obj.id
+        obj1 = User(id='01')
+        obj1_key = 'User' + '.' + obj1.id
+        obj2 = City(id='02')
+        obj2_key = 'City' + '.' + obj2.id
+        obj3 = Amenity(id='03')
+        obj3_key = 'Amenity' + '.' + obj3.id
+        obj4 = Place(id='04')
+        obj4_key = 'Place' + '.' + obj4.id
+        obj5 = Review(id='05')
+        obj5_key = 'Review' + '.' + obj5.id
+        obj6 = State(id='06')
+        obj6_key = 'State' + '.' + obj6.id
+
+        self.assertEqual(storage.all(), {})
+        obj.id = 123
+        storage.new(obj)
+        storage.new(obj1)
+        storage.new(obj2)
+        storage.new(obj3)
+        storage.new(obj4)
+        storage.new(obj5)
+        storage.new(obj6)
+        self.assertEqual(obj, storage.all()[obj_key])
+        self.assertEqual(obj1, storage.all()[obj1_key])
+        self.assertEqual(obj2, storage.all()[obj2_key])
+        self.assertEqual(obj3, storage.all()[obj3_key])
+        self.assertEqual(obj4, storage.all()[obj4_key])
+        self.assertEqual(obj5, storage.all()[obj5_key])
+        self.assertEqual(obj6, storage.all()[obj6_key])
