@@ -38,6 +38,11 @@ class Test_BaseModel(unittest.TestCase):
         time = datetime.now()
         self.assertFalse(my_model.updated_at == time)
 
+    def test_save(self):
+        old_updated_at = self.model.updated_at
+        self.model.save()
+        self.assertNotEqual(old_updated_at, self.model.updated_at)
+    
     def test_attr_none(self):
         """None attribute."""
         test = BaseModel(None)
@@ -69,5 +74,6 @@ class Test_BaseModel(unittest.TestCase):
         test.save()
         time = datetime.now()
         self.assertFalse(test == time)
+
 
     
