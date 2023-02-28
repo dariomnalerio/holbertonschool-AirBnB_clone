@@ -70,6 +70,13 @@ class Test_BaseModel(unittest.TestCase):
         with self.assertRaises(AttributeError):
             BaseModel.save(["Hello, World"])
             BaseModel.save([111, 111, 111, 111])
+
+    def test_save3(self):
+        """ Test save method """
+        base = BaseModel()
+        base.save()
+        with open("storage.json", "r") as f:
+            self.assertIn("BaseModel." + base.id, f.read())
     
     def test_thetime(self):
         """ test the actual datetime """
