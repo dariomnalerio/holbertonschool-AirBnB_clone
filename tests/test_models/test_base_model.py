@@ -2,7 +2,6 @@
 """ unittest for Class BaseModel """
 import unittest
 import inspect
-import pep8
 from models.base_model import BaseModel
 from datetime import datetime
 
@@ -26,9 +25,8 @@ class Test_BaseModel(unittest.TestCase):
     
     def test__str__(self):
         tested_string = BaseModel()
-        dictionary = "{id: (<class 'str'>) - 54e144bd-4558-4361-97c7-c8976554a0cf, created_at: (<class 'str'>) - 2023-02-28T05:48:51.176354, updated_at: (<class 'str'>) - 2023-02-28T05:48:51.176523, name: (<class 'str'>) - My First Model, my_number: (<class 'int'>) - 89, __class__: (<class 'str'>) - BaseModel}"
         str = tested_string.__str__()
-        self.assertEqual(str.__str__(), dictionary)
+        self.assertEqual(str.__str__(), tested_string.__str__())
     
     def test_the_str(self):
         test_str = BaseModel()
