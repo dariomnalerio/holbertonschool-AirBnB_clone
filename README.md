@@ -1,1 +1,1 @@
-README file
+![Texto alternativo de la imagen](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20230228%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20230228T214513Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=17027e93c7e22962c4f791afd781b2c6d7a71fc80fa1ce7a4b6dca0fd06d7baf)
