@@ -2,6 +2,7 @@
 from models.user import User
 import unittest
 
+
 class Test_user(unittest.TestCase):
 
     def test_class(self):
@@ -16,6 +17,7 @@ class Test_user(unittest.TestCase):
         self.assertEqual(new_class.password, "")
         self.assertEqual(new_class.first_name, "")
         self.assertEqual(new_class.last_name, "")
+
 
 if __name__ == '__main__':
     unittest.main()

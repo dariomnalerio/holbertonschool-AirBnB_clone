@@ -1,4 +1,4 @@
-#usr/bin/python3
+# usr/bin/python3
 """ unittest for Class BaseModel """
 import unittest
 import io
@@ -11,8 +11,9 @@ import os
 
 
 class Test_BaseModel(unittest.TestCase):
-    
+
     base = BaseModel()
+
     def setUp(self):
         self.base = BaseModel()
 
@@ -28,12 +29,12 @@ class Test_BaseModel(unittest.TestCase):
             os.remove(FileStorage.__file_path)
         except FileNotFoundError:
             pass
-    
+
     def test_inst(self):
         """check class """
         ml = BaseModel()
         self.assertTrue(ml, BaseModel)
-    
+
     def test_actual_time(self):
         my_model = BaseModel()
         my_model.save()
@@ -45,7 +46,7 @@ class Test_BaseModel(unittest.TestCase):
         old_updated_at = self.base.updated_at
         self.base.save()
         self.assertNotEqual(old_updated_at, self.base.updated_at)
-    
+
     def test_attr_none(self):
         """None attribute."""
         test = BaseModel(None)
@@ -60,11 +61,12 @@ class Test_BaseModel(unittest.TestCase):
         self.assertEqual(dict['created_at'], diccionary.created_at.isoformat())
         self.assertEqual(dict['updated_at'], diccionary.updated_at.isoformat())
         self.assertEqual(dict['__class__'], 'BaseModel')
-    
+
     def test_str(self):
         """ Test of BaseModel __str__ method"""
-        self.assertEqual(Test_BaseModel.base.__str__(), f'[{Test_BaseModel.base.__class__.__name__}] ({Test_BaseModel.base.id}) {Test_BaseModel.base.__dict__}')
-    
+        self.assertEqual(Test_BaseModel.base.__str__(
+        ), f'[{Test_BaseModel.base.__class__.__name__}] ({Test_BaseModel.base.id}) {Test_BaseModel.base.__dict__}')
+
     def test_save2(self):
         """Check what save does"""
         with self.assertRaises(AttributeError):
@@ -77,13 +79,10 @@ class Test_BaseModel(unittest.TestCase):
         base.save()
         with open("storage.json", "r") as f:
             self.assertIn("BaseModel." + base.id, f.read())
-    
+
     def test_thetime(self):
         """ test the actual datetime """
         test = BaseModel()
         test.save()
         time = datetime.now()
         self.assertFalse(test == time)
-
-
-    

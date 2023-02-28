@@ -2,6 +2,7 @@
 from models.review import Review
 import unittest
 
+
 class Test_review(unittest.TestCase):
 
     def test_class(self):
@@ -14,6 +15,7 @@ class Test_review(unittest.TestCase):
         self.assertEqual(new_class.place_id, "")
         self.assertEqual(new_class.user_id, "")
         self.assertEqual(new_class.text, "")
+
 
 if __name__ == '__main__':
     unittest.main()
