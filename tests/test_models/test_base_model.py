@@ -24,7 +24,13 @@ class Test_BaseModel(unittest.TestCase):
         self.assertEqual(dict['updated_at'], diccionary.updated_at.isoformat())
         self.assertEqual(dict['__class__'], 'BaseModel')
     
-    def test_str(self):
+    def test__str__(self):
+        tested_string = BaseModel()
+        dictionary = "{id: (<class 'str'>) - 54e144bd-4558-4361-97c7-c8976554a0cf, created_at: (<class 'str'>) - 2023-02-28T05:48:51.176354, updated_at: (<class 'str'>) - 2023-02-28T05:48:51.176523, name: (<class 'str'>) - My First Model, my_number: (<class 'int'>) - 89, __class__: (<class 'str'>) - BaseModel}"
+        str = tested_string.__str__()
+        self.assertEqual(str.__str__(), dictionary)
+    
+    def test_the_str(self):
         test_str = BaseModel()
         expecting = f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
         self.assertNotEqual(str(test_str), expecting)
