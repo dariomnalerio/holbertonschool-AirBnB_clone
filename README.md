@@ -23,15 +23,23 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
 
 	| Function | Description | Usage example |
 	| -- | -- | -- |
-	| `do_quit` | To exit the program | `quit` |
-	| `do_EOF` | To exit the program handling End of File (ctrl + D) | ctrl + D |
+	| `do_quit` | Exits the program | `quit` |
+	| `do_EOF` | Exits the program handling End of File | ctrl + D |
 	| `emptyline` | Do nothing | empty line + enter |
 	| `do_create` | Creates a new instance | `create BaseModel` |
 	| `do_show` | Prints the string representation of an instance | `show Place a1c42567-c2b9-43bc-9825-9b2edffb483g` |
 	| `do_destroy` | Deletes an instance based on the class name and id | `destroy User a1c42567-c2b9-43bc-9825-9b2edffb483f` |
-	| `do_all` | Prints all string representation of all instances | `all` or `all Review`|
+	| `do_all` | Prints all string representation of all instances | `all` |
 	| `do_update` | Updates an instance based on the class name and id by adding or updating attribute | `update User a1c42567-c2b9-43bc-9825-9b2edffb483f email "aibnb@mail.com"`|
-	
+
+## Supported classes
+
+The main class is BaseModel, which defines all common attributes/methods to be inherited by other classes.
+
+The subclasses are:
+
+    `User`, `State`, `City`, `Amenity`, `Place`, `Rewiew`
+
 # Usage:
 
 ## How to open
