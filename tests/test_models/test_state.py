@@ -2,6 +2,7 @@
 from models.state import State
 import unittest
 
+
 class Test_state(unittest.TestCase):
 
     def test_class(self):
@@ -10,6 +11,7 @@ class Test_state(unittest.TestCase):
         self.assertIsInstance(new_class, State)
         self.assertTrue(hasattr(new_class, "name"))
         self.assertEqual(new_class.name, "")
+
 
 if __name__ == '__main__':
     unittest.main()

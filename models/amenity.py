@@ -5,6 +5,6 @@ from models.base_model import BaseModel
 
 class Amenity(BaseModel):
     """
-    Class Amenity
+    Represents an amenity (desirable or useful feature or facility of a place).
     """
-    name = ""
+    name = ""  # Amenity name

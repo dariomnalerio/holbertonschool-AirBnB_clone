@@ -13,9 +13,10 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class Test_File_Storage(unittest.TestCase):
-    """ Doc """    
-    
+    """ Doc """
+
     def setUp(self):
         """ check empty """
         try:
@@ -30,11 +31,10 @@ class Test_File_Storage(unittest.TestCase):
             remove('storage.json')
         except Exception:
             pass
-    
+
     def empty_class(self):
         """ empty """
-    
-    
+
     def test_functios(self):
         """ check  all function """
         storage = FileStorage()
@@ -42,7 +42,7 @@ class Test_File_Storage(unittest.TestCase):
         self.assertIsNotNone(obj)
         self.assertEqual(type(obj), dict)
         self.assertIs(obj, storage._FileStorage__objects)
-    
+
     def test_all(self):
         """ check  all function """
         storage = FileStorage()
@@ -50,13 +50,13 @@ class Test_File_Storage(unittest.TestCase):
         self.assertIsNotNone(test)
         self.assertEqual(type(test), dict)
         self.assertIs(test, storage._FileStorage__objects)
-    
+
     def test_save_function(self):
         """ Save  """
         test = BaseModel()
         key = 'BaseModel' + '.' + test.id
         test1 = User()
-        key_1 = 'User' + '.' +   test1.id
+        key_1 = 'User' + '.' + test1.id
         test2 = City()
         key_2 = 'City' + '.' + test2.id
         test3 = Amenity()
@@ -80,7 +80,7 @@ class Test_File_Storage(unittest.TestCase):
         test = BaseModel()
         key = 'BaseModel' + '.' + test.id
         test1 = User()
-        key_1 = 'User' + '.' +   test1.id
+        key_1 = 'User' + '.' + test1.id
         test2 = City()
         key_2 = 'City' + '.' + test2.id
         test3 = Amenity()

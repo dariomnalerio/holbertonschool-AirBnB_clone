@@ -21,13 +21,15 @@ class FileStorage:
 
     def new(self, obj):
         """
-        Set in __objects the obj with key <obj class name>.id
+        Adds a new object to the __objects dictionary using
+        the object's class name and id as the key
         """
         FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
 
     def save(self):
         """
-        Serialize __objects to the JSON file (path: __file_path)
+        Serializes __objects to a JSON file
+        at the path specified by __file_path
         """
         obj_dict = {}
         for key, value in FileStorage.__objects.items():
@@ -38,7 +40,8 @@ class FileStorage:
 
     def reload(self):
         """
-        Deserialize the JSON file to __objects
+        Deserializes the JSON file at the path
+        specified by __file_path into __objects
         """
         from models.base_model import BaseModel
         from models.user import User
