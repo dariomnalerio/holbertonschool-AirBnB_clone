@@ -18,10 +18,20 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
 - All the files use the pycodestyle (version 2.7.) standard guidelines, including class and functions documentation
 - All tests are execute using the unittest module
 
-# command interpreter or console
+## The console main file
+- **`console.py`** : contains the entry point of the command interpreter and specific methods to handle the input. **These are the commands you must use to work in the console**:
 
-The first piece is to manipulate a powerful storage system. This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”. This means: from your console code (the command interpreter itself) and from the front-end and RestAPI you will build later, you won’t have to pay attention (take care) of how your objects are stored.
-
+	| Function | Description | Usage example |
+	| -- | -- | -- |
+	| `do_quit` | To exit the program | `quit` |
+	| `do_EOF` | To exit the program handling End of File (ctrl + D) | ctrl + D |
+	| `emptyline` | Do nothing | empty line + enter |
+	| `do_create` | Creates a new instance | `create BaseModel` |
+	| `do_show` | Prints the string representation of an instance | `show Place a1c42567-c2b9-43bc-9825-9b2edffb483g` |
+	| `do_destroy` | Deletes an instance based on the class name and id | `destroy User a1c42567-c2b9-43bc-9825-9b2edffb483f` |
+	| `do_all` | Prints all string representation of all instances | `all` or `all Review`|
+	| `do_update` | Updates an instance based on the class name and id by adding or updating attribute | `update User a1c42567-c2b9-43bc-9825-9b2edffb483f email "aibnb@mail.com"`|
+	
 # Usage:
 
 ## How to open
