@@ -29,6 +29,9 @@ The first piece is to manipulate a powerful storage system. This storage engine 
 $ ./console.py
 (hbnb) help
 
+```
+
+
 ## Usage examples
 ### Non-interactive mode
 ```
