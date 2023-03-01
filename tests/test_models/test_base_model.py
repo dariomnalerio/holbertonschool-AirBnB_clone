@@ -62,11 +62,12 @@ class Test_BaseModel(unittest.TestCase):
         self.assertEqual(dict['updated_at'], diccionary.updated_at.isoformat())
         self.assertEqual(dict['__class__'], 'BaseModel')
 
+    
     def test_str(self):
-        """ Test of BaseModel __str__ method"""
-        self.assertEqual(Test_BaseModel.base.__str__(
-        ), f'[{Test_BaseModel.base.__class__.__name__}] \
-        ({Test_BaseModel.base.id}) {Test_BaseModel.base.__dict__}')
+        """Test of BaseModel __str__ method."""
+        self.assertEqual(Test_BaseModel.base.__str__(),
+                         f'[{Test_BaseModel.base.__class__.__name__}] '
+                         f'({Test_BaseModel.base.id}) {Test_BaseModel.base.__dict__}')
 
     def test_save2(self):
         """Check what save does"""
