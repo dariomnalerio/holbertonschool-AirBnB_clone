@@ -7,4 +7,4 @@ class State(BaseModel):
     """
     Class State
     """
-    name = ""
+    name = "" # Name of the state
