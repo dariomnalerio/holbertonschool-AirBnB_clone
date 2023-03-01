@@ -1,1 +1,1 @@
-![Ejemplo de imagen](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
+![Ejemplo de imagen](https://images.app.goo.gl/rL1iY9bAJTYvt76y5.png)
