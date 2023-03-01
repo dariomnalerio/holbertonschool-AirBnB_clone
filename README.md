@@ -38,7 +38,7 @@ The main class is BaseModel, which defines all common attributes/methods to be i
 
 The subclasses are:
 
-    `User`, `State`, `City`, `Amenity`, `Place`, `Rewiew`
+    User, State, City, Amenity, Place, Rewiew
 
 # Usage:
 
