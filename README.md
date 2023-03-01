@@ -12,7 +12,7 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
 - Update attributes of an object
 - Destroy an object 
 
-# Requirements
+## Requirements
 
 - All the files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
 - All the files use the pycodestyle (version 2.7.) standard guidelines, including class and functions documentation
@@ -39,6 +39,16 @@ The main class is BaseModel, which defines all common attributes/methods to be i
 The subclasses are:
 
     User, State, City, Amenity, Place, Rewiew
+
+## The storage system file
+- **`file_storage.py`** : is the responsable to keep functional and safe all the data in the system via serializations of instances to a JSON file and deserializations of JSON file to instances. The file is found in *models* folder > *engine* folder. The methods of the class FileStorage are for internal use only. 
+ 
+	| Function | Description |
+	| -- | -- |
+	| `all` | Returns all saved objects in dictionary format |
+	| `new` | Adds a new object to the __objects dictionary using the object's class name and id as the key |
+	| `save` | Serializes private attribute __objects to a JSON file |
+	| `reload` | Deserializes the JSON file at specified path private attribute __objects |
 
 # Usage:
 
