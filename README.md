@@ -57,6 +57,12 @@ The subclasses are:
 $ ./console.py
 ```
 
+## What the console can do
+
+- Manage (create, update, destroy, etc) objects via a console / command interpreter
+- Serialize and deserialize objects (to and from a JSON file)
+
+- Commands: create, show, destroy, all (shows all), update, help, quit
 
 ## Usage examples
 ### Non-interactive mode
@@ -98,10 +104,6 @@ c384e626-0924-4fd7-910c-2b87af45215c
 (hbnb) quit
 $
 ```
-
-- Manage (create, update, destroy, etc) objects via a console / command interpreter
-- Serialize and deserialize objects (to and from a JSON file)
-- Commands: create, show, destroy, all (shows all), update, help, quit
 
 ### Contact Info:
 
