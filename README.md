@@ -29,7 +29,7 @@ The first piece is to manipulate a powerful storage system. This storage engine 
 $ ./console.py
 (hbnb) help
 
-Documented commands (type help <topic>):
+Documented commands:
 ========================================
 EOF  help  quit
 
