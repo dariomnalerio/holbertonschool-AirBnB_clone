@@ -27,8 +27,6 @@ The first piece is to manipulate a powerful storage system. This storage engine 
 ## How to open
 ```
 $ ./console.py
-(hbnb) help
-
 ```
 
 
@@ -73,9 +71,9 @@ c384e626-0924-4fd7-910c-2b87af45215c
 $
 ```
 
-- manage (create, update, destroy, etc) objects via a console / command interprete
-- store and persist objects to a file (JSON file)
-- Allowed commands: create, show, destroy, all (shows all), update, help, quit
+- Manage (create, update, destroy, etc) objects via a console / command interpreter
+- Serialize and deserialize objects (to and from a JSON file)
+- Commands: create, show, destroy, all (shows all), update, help, quit
 
 ### Contact Info:
 
