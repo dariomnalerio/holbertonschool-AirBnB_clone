@@ -1,3 +1,4 @@
+#usr/bin/python3
 """ Test for user class """
 from models.user import User
 import unittest

@@ -1,3 +1,4 @@
+#usr/bin/python3
 """ Test for review class """
 from models.review import Review
 import unittest
@@ -16,9 +17,6 @@ class Test_review(unittest.TestCase):
         self.assertEqual(new_class.user_id, "")
         self.assertEqual(new_class.text, "")
 
-
-if __name__ == '__main__':
-    unittest.main()
 
 if __name__ == '__main__':
     unittest.main()
