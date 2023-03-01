@@ -13,18 +13,32 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
 - Destroy an object 
 
 # Requirements
+
 - All the files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
 - All the files use the pycodestyle (version 2.7.) standard guidelines, including class and functions documentation
 - All tests are execute using the unittest module
 
 # command interpreter or console
+
 The first piece is to manipulate a powerful storage system. This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”. This means: from your console code (the command interpreter itself) and from the front-end and RestAPI you will build later, you won’t have to pay attention (take care) of how your objects are stored.
 
 # Usage:
 
-In order to start the console, you must use the following command:
+## How to open
+```
+$ ./console.py
+(hbnb) help
 
-    ./console.py
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+```
+
 
 ## Usage examples
 ### Non-interactive mode
@@ -70,20 +84,6 @@ $
 - manage (create, update, destroy, etc) objects via a console / command interprete
 - store and persist objects to a file (JSON file)
 - Allowed commands: create, show, destroy, all (shows all), update, help, quit
-### Example how to open:
-```
-$ ./console.py
-(hbnb) help
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-
-(hbnb) 
-(hbnb) 
-(hbnb) quit
-$
-```
 
 ### Contact Info:
 
