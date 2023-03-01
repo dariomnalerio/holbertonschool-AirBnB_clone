@@ -28,17 +28,6 @@ The first piece is to manipulate a powerful storage system. This storage engine 
 ```
 $ ./console.py
 (hbnb) help
-```
-### Documented commands:
-
-EOF  help  quit
-```
-(hbnb) 
-(hbnb) 
-(hbnb) quit
-$
-```
-
 
 ## Usage examples
 ### Non-interactive mode
